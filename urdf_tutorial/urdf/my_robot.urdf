@@ -8,23 +8,23 @@
     <joint name="joint1" type="continuous">
         <parent link="base_link"/>
         <child link="joint1"/>
-        <origin xyz="0 0 0.75" rpy="-1.57 0 0" />
+        <origin xyz="0 0 0.75" rpy="-1.57 0 1.57" />
         <axis xyz="0 1 0" />
     </joint> 
     <joint name="joint2" type="prismatic">
         <parent link="joint1"/>
         <child link="joint2"/>
-        <origin xyz="0 -0.07 0 " rpy="-1.57 0 -1.57" />
-        <axis xyz="0 0 1" />
-        <limit effort="10.0" lower="-1" upper="1" velocity="0.5"/>
+        <origin xyz="0 -0.07 0 " rpy="1.57 3.14 1.57" />
+        <axis xyz="0 1 0" />
+        <limit effort="10.0" lower="0" upper="1" velocity="0.5"/>
     </joint>
 
     <joint name="joint3" type="prismatic">
         <parent link="joint2"/>
         <child link="joint3"/>
-        <origin xyz="0 -1 0" rpy="1.57 0 -1.57" />
-        <axis xyz="1 0 0" />
-        <limit effort="10.0" lower="-1" upper="1" velocity="0.5"/>
+        <origin xyz="0 0 1" rpy="1.57 3.14 -1.57" />
+        <axis xyz="0 1 0" />
+        <limit effort="10.0" lower="0" upper="1" velocity="0.5"/>
     </joint>
     <joint name="joint4" type="continuous">
         <parent link="joint3"/>
